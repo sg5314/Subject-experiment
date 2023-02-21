@@ -5,9 +5,6 @@ import (
 	"net/http"
 	// "strconv"
 	"fmt"
-
-	"github.com/gin-contrib/sessions"
-    "github.com/gin-contrib/sessions/cookie"
 )
 
 
@@ -20,9 +17,6 @@ func main() {
 	router.LoadHTMLGlob("./templates/*.html")
 	router.Static("/img", "./img/")
 
-	// セッションの設定
-	store := cookie.NewStore([]byte("secret"))
-    router.Use(sessions.Sessions("mysession", store))
 
 	// router.GET("/research/:route/:page/", func(c *gin.Context) {
 	// 	var page_temp int
