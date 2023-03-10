@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="text/javascript" src="/js/research.js"></script>
 </head>
 <body>
-    <img src="../img/{{.route}}/{{.page}}" height="300px" width="auto">
-    <form action="/post/" method="post">
-        <div>Message: <input name="str"></div>
-        <input type="submit">
-      </form>
+    <img src="{{.route}}" height="300px" width="auto">
+    <form action="/" method="post">
+        <input type="submit" value="モダンと思う" name="str">
+        <input type="submit" value="モダンでないと思う" name="str">
+    </form>
+    <progress value="{{.progress}}" max={{.max_progress}}></progress>
+    <p>{{.progress}}/{{.max_progress}}</p>
 </body>
 </html>
