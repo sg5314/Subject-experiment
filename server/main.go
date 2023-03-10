@@ -41,7 +41,12 @@ func save_data(index []string, contents []string, subject_name string) {
 
 	for ind, con := range contents {
 		fmt.Println(ind, index[ind], con)
-		writer.Write([]string{strconv.Itoa(ind), index[ind], con})
+		if con == "モダンと思う" {
+			writer.Write([]string{strconv.Itoa(ind), index[ind], "modern"})
+		} else if con == "モダンでないと思う" {
+			writer.Write([]string{strconv.Itoa(ind), index[ind], "not_modern"})
+		}
+
 	}
 	writer.Flush()
 
